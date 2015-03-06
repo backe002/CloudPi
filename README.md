@@ -1,3 +1,0 @@
-# Cloud
-# CloudPi
-# CloudPi
