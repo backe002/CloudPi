@@ -9,3 +9,7 @@ echo starting instances, please wait
 aws ec2 wait instance-running --instance-ids $all_instances
 
 echo all instances running
+
+aws ec2 run_instances --image-id 'ami-dee6bdb6'
+
+echo starting app-tier instance..

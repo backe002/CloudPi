@@ -1,6 +1,7 @@
 import json
 from flask.ext.negotiate import produces
 from flask import Flask, request
+from compute import Compute
 
 api = Flask(__name__)
 
@@ -10,11 +11,11 @@ def entry_point():
     if 'input' not in request.args:
             raise Exception({'message': 'query parameter {0} not provided.'.format('input')})
 
-    pi_to_compute = request.args['input']
+    compute = Compute(request.args['input'])
 
-    computed_pi = compute.get(pi_to_compute)
+    # computed_pi = compute.run_pifft()
 
-    return json.dumps(computed_pi), 200, None
+    return json.dumps('computed_pi'), 200, None
 
 
 def main():
